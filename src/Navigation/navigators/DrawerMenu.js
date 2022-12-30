@@ -7,7 +7,15 @@ import {
   DrawerContentScrollView,
   DrawerItem,
 } from "@react-navigation/drawer";
-import { Home } from "Screens";
+import {
+  Home,
+  Profile,
+  Accounts,
+  Help,
+  Settings,
+  Stats,
+  Transactions,
+} from "Screens";
 import { useState } from "react";
 import Animated from "react-native-reanimated";
 
@@ -103,6 +111,10 @@ const CustomDrawerContent = ({ navigation, theme }) => {
         {MENUs?.map((menu, index) => {
           return (
             <DrawerItem
+              onPress={() => {
+                navigation.navigate(menu.name);
+                setActiveIndex(index);
+              }}
               activeTintColor={theme.colors.boxBackground}
               focused={activeIndex === index}
               key={index}
@@ -214,6 +226,24 @@ const DrawerMenu = () => {
       >
         <Drawer.Screen name="Home">
           {(props) => <Home {...props} animatedStyle={animatedStyle} />}
+        </Drawer.Screen>
+        <Drawer.Screen name="Accounts">
+          {(props) => <Accounts {...props} animatedStyle={animatedStyle} />}
+        </Drawer.Screen>
+        <Drawer.Screen name="Help">
+          {(props) => <Help {...props} animatedStyle={animatedStyle} />}
+        </Drawer.Screen>
+        <Drawer.Screen name="Profile">
+          {(props) => <Profile {...props} animatedStyle={animatedStyle} />}
+        </Drawer.Screen>
+        <Drawer.Screen name="Settings">
+          {(props) => <Settings {...props} animatedStyle={animatedStyle} />}
+        </Drawer.Screen>
+        <Drawer.Screen name="Stats">
+          {(props) => <Stats {...props} animatedStyle={animatedStyle} />}
+        </Drawer.Screen>
+        <Drawer.Screen name="Transactions">
+          {(props) => <Transactions {...props} animatedStyle={animatedStyle} />}
         </Drawer.Screen>
       </Drawer.Navigator>
     </View>

@@ -3,9 +3,8 @@ import { View, Text } from "react-native";
 import Animated from "react-native-reanimated";
 import { useTheme } from "@react-navigation/native";
 
-const Home = ({ animatedStyle }) => {
+const Stats = ({ animatedStyle }) => {
   const theme = useTheme();
-
   return (
     <Animated.View
       style={{
@@ -16,9 +15,9 @@ const Home = ({ animatedStyle }) => {
         ...animatedStyle,
       }}
     >
-      <Text>Home Screen</Text>
+      <Text>Stats Screen</Text>
     </Animated.View>
   );
 };
 
-export default Home;
+export default Stats;
